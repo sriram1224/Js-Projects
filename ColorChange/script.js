@@ -27,13 +27,17 @@ function colorChange(){
 
 let innerElement = document.querySelector(".square");
 let shapeIndex = 0;
-const shapes = ["square", "triangle", "circle","rectangle","diamond"]; // Add shapes as needed
+const shapes = ["square", "triangle", "circle", "rectangle", "diamond"]; // Add shapes as needed
+
+function getRandomShapeIndex() {
+  return Math.floor(Math.random() * shapes.length);
+}
 
 function shapeChange() {
   innerElement.classList.remove(shapes[shapeIndex]);
 
-  // Update the shape index with loop
-  shapeIndex = (shapeIndex + 1) % shapes.length;
+  // Update the shape index randomly
+  shapeIndex = getRandomShapeIndex();
 
   innerElement.classList.add(shapes[shapeIndex]);
 }
