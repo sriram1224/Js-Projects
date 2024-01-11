@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  #outer {
+    width: 200px;
+    height: 200px;
+    background: red; 
+    border-radius: 50%;
+    position: relative;
+  }
+  
+  #inner {
+    width: 100px;
+    height: 100px;
+    background: rgb(255, 255, 255);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .square{
+    background-color: white;
+  }
+  
+  
+  
+  .triangle {
+ 
+  
+        
+    
+  }
+</style>
+</head>
+
+<body>
+
+<div id="outer">
+  <div id="inner" class="square"></div>  
+</div>
+
+<button onclick="changeColor()">Change Color</button> 
+<button onclick="changeShape()">Change Shape</button>
+
+<script>
+function changeColor() {
+  var outer = document.getElementById("outer");
+  outer.style.background = "green"; 
+}
+
+function changeShape() {
+
+    var inner = document.getElementById("inner");
+  
+    if (inner.className === "square") {
+  
+      inner.className = "triangle"; 
+      
+  
+    } else {
+  
+      inner.className = "square";
+      
+      
+  
+    }
+  
+  } 
+</script>
+
+</body>
+</html>

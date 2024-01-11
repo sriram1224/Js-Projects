@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geekster change Shape and Color change</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .inside{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .triangle {
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            width: 0;
+            height: 0;
+            border-bottom: 75px solid red;
+            border-right: 75px solid transparent;
+            transition: border-bottom-width 0.3s, border-right-width 0.3s;
+
+
+        }
+
+        .outer {
+            width: 200px;
+            height: 200px;
+            background: green;
+            border-radius: 50%;
+            position: relative;
+            transition: background-color 0.5s;
+        }
+
+        .square {
+            width: 100px;
+
+            height: 100px;
+            background: rgb(255, 255, 255);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s, height 0.5s;
+        }
+        .buttons{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="inside">
+            <div class="outer">
+                <div class="square">
+
+                </div>
+            </div>
+            <div class="buttons">
+
+            
+            <button onclick="colorChange()">Color Change</button>
+            <button onclick="shapeChange()">Change
+                Shape</button>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
