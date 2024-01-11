@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;  
+    transition: background-color 0.5s ease, color 0.5s ease;
+    padding: 50px;
+    font-size: 30px;
+  }
+
+  .light-mode {
+    background-color: white;
+    color: black;  
+  }
+  
+  .dark-mode {
+    background-color: black;
+    color: white;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .bulb-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #ffeb3b;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.5s ease, 
+               color 0.5s ease,
+               transform 0.5s ease;
+  }
+  
+  .dark-mode .bulb-icon {
+    background-color: black;
+    color: white;  
+    transform: rotate(180deg);
+  }
