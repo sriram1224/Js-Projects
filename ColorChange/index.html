@@ -43,6 +43,28 @@
 
 
         }
+        .rectangle{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background : red;
+            width: 100px;
+            height: 70px;
+            transition: border-bottom-width 0.3s, border-right-width 0.3s;
+        }
+        .circle{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        
+            transition: border-bottom-width 0.3s, border-right-width 0.3s;
+        }
 
         .outer {
             width: 200px;
@@ -89,6 +111,7 @@
             </div>
         </div>
     </div>
+    
     <script src="./script.js"></script>
 </body>
 

@@ -23,21 +23,17 @@ function colorChange(){
     position++;
 }
 
-let innerElement;
-let isTriangle = false;
+
+
+let innerElement = document.querySelector(".square");
+let shapeIndex = 0;
+const shapes = ["square", "triangle", "circle","rectangle"]; // Add shapes as needed
 
 function shapeChange() {
-  if(!innerElement) {
-    innerElement = document.querySelector(".square");
-  }
-  
-  if(isTriangle) {
-    innerElement.classList.remove("triangle");
-    innerElement.classList.add("square");
-  } else {
-    innerElement.classList.remove("square");
-    innerElement.classList.add("triangle");
-  }
-  
-  isTriangle = !isTriangle;
+  innerElement.classList.remove(shapes[shapeIndex]);
+
+  // Update the shape index with loop
+  shapeIndex = (shapeIndex + 1) % shapes.length;
+
+  innerElement.classList.add(shapes[shapeIndex]);
 }
