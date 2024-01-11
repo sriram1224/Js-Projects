@@ -27,7 +27,7 @@ function colorChange(){
 
 let innerElement = document.querySelector(".square");
 let shapeIndex = 0;
-const shapes = ["square", "triangle", "circle","rectangle"]; // Add shapes as needed
+const shapes = ["square", "triangle", "circle","rectangle","diamond"]; // Add shapes as needed
 
 function shapeChange() {
   innerElement.classList.remove(shapes[shapeIndex]);

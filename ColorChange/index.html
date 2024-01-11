@@ -18,19 +18,36 @@
             align-items: center;
         }
 
+        .diamond {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            /* Updated transform property */
+
+            background: #fff;
+            height: 60px;
+            width: 60px;
+
+          
+
+        }
+
         .container {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        .inside{
+
+        .inside {
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
+
         .triangle {
 
-            position: absolute;
+            position: relative;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -39,21 +56,21 @@
             height: 0;
             border-bottom: 75px solid red;
             border-right: 75px solid transparent;
-            transition: border-bottom-width 0.3s, border-right-width 0.3s;
-
+          
 
         }
-        .rectangle{
+
+        .rectangle {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background : red;
+            background: rgb(0, 0, 0);
             width: 100px;
             height: 70px;
-            transition: border-bottom-width 0.3s, border-right-width 0.3s;
-        }
-        .circle{
+             }
+
+        .circle {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -62,9 +79,8 @@
             border-radius: 50%;
             width: 100px;
             height: 100px;
-        
-            transition: border-bottom-width 0.3s, border-right-width 0.3s;
-        }
+
+            }
 
         .outer {
             width: 200px;
@@ -73,6 +89,7 @@
             border-radius: 50%;
             position: relative;
             transition: background-color 0.5s;
+            text-align: center;
         }
 
         .square {
@@ -84,9 +101,10 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            transition: width 0.5s, height 0.5s;
+            
         }
-        .buttons{
+
+        .buttons {
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -104,14 +122,14 @@
             </div>
             <div class="buttons">
 
-            
-            <button onclick="colorChange()">Color Change</button>
-            <button onclick="shapeChange()">Change
-                Shape</button>
+
+                <button onclick="colorChange()">Color Change</button>
+                <button onclick="shapeChange()">Change
+                    Shape</button>
             </div>
         </div>
     </div>
-    
+
     <script src="./script.js"></script>
 </body>
 
