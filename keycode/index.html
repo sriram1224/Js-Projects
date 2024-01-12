@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key Event Example</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+<div class="key-info darker box " id="keyInfo">
+    You Pressed:
+</div>
+
+<div class="key-info goldilocks box rounded-border-gradient" id="codeInfo"><p>
+    Key Code:
+</p>
+    </div>
+    <div>
+        
+    </div>
+
+</div>
+
+<script>
+  document.addEventListener('keydown', function(event) {
+    let key = event.key;
+    let code = event.keyCode; // Use event.keyCode for the numerical code
+
+    // Display on screen
+    let keyDiv = document.getElementById('keyInfo');
+    let codeDiv = document.getElementById('codeInfo');
+
+    keyDiv.innerHTML = `You Pressed: ${key}`;
+    codeDiv.innerHTML = `Key Code: ${code}`;
+  });
+</script>
+
+</body>
+</html>

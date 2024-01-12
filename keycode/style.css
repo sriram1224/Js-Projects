@@ -1,0 +1,53 @@
+
+  body {
+    background-color:
+      hsl(0, 0%, 0%);
+  }
+  .black.box {
+    
+    --shadow-color: hsla(0, 0%, 100%, 0.5);
+  }
+  .darker.box {
+    --shadow-color: hsl(327, 100%, 50%);
+  }
+  .goldilocks.box {
+    --shadow-color: hsl(73, 100%, 53%);
+  }
+  .box {
+    filter: drop-shadow(
+      1px 2px 8px var(--shadow-color)
+    );
+  }
+    body {
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        color: yellow;
+       
+    }
+
+
+.key-info {
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(255, 11, 11, 0.1);
+  background-color: #151313;
+        padding: 20px;
+        margin: 10pc;
+        border-radius: 8px;
+        color: yellow;
+}
+.container{
+text-align: center;
+}
+
+
+
+
+
+
+
+
+
