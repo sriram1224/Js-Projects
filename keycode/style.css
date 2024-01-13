@@ -29,9 +29,16 @@
        
     }
 
-
+.history {
+  max-height: 150px;
+       overflow-y: auto; 
+       border: 1px solid #ccc;
+       width: 200px;
+   
+  
+}
 .key-info {
-  margin-bottom: 20px;
+  
   box-shadow: 0 0 10px rgba(255, 11, 11, 0.1);
   background-color: #151313;
         padding: 20px;
