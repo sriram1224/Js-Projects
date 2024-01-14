@@ -15,7 +15,21 @@
             margin: 0;
             background-color: #000000;
         }
-        
+        .black.box {
+    
+            --shadow-color: hsla(0, 0%, 100%, 0.5);
+          }
+          .darker.box {
+            --shadow-color: hsl(148, 100%, 50%);
+          }
+          .goldilocks.box {
+            --shadow-color: hsl(73, 100%, 53%);
+          }
+          .box {
+            filter: drop-shadow(
+              1px 2px 8px var(--shadow-color)
+            );
+          }
         .container {
             text-align: center;
             background-color: #fff;
@@ -29,16 +43,18 @@
             transition: color 0.3s ease-in-out;
         }
         .text-container{
-            background-color: rgb(0, 0, 0);
+            
             border-radius: 10px;
-            color: white;
+            color: rgb(0, 0, 0);
+            font-size: 30px;
+            
         }
         
         .buttons button {
             font-size: 1.5em;
             margin: 0 5px;
             padding: 10px;
-            background-color: #4CAF50;
+            background-color: #7d4caf;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -47,15 +63,15 @@
         }
         
         .buttons button:hover {
-            background-color: #45a049;
+            background-color: #16cd1f;
         }
         
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="text-container">
+    <div class="container darker box">
+        <div class="text-container ">
             <h1 id="count" class="count-animation">
                 0
             </h1>

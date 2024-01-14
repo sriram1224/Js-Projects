@@ -4,24 +4,31 @@ function updateCount() {
     const countElement = document.getElementById('count');
     countElement.innerText = count;
 
-    // Apply animation class
+   
     countElement.classList.add('count-animation');
-    // Remove animation class after the animation duration
-    setTimeout(() => {
-        countElement.classList.remove('count-animation');
-    }, 300);
+
+    
 }
 
 function increaseCount() {
     count++;
+
+    
+    const countElement = document.getElementById('count');
+    countElement.style.color = 'Black'; 
+
     updateCount();
+
+    
+  
 }
 
 function decreaseCount() {
-    if (count > 0) {
+    const countElement = document.getElementById('count');
+    countElement.style.color = 'red';
         count--;
         updateCount();
-    }
+    
 }
 
 function resetCount() {
