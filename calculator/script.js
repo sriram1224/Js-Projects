@@ -11,11 +11,12 @@ function updateCount() {
 }
 
 function increaseCount() {
+    
     count++;
 
     
     const countElement = document.getElementById('count');
-    countElement.style.color = 'blue'; 
+    countElement.style.color = 'green'; 
     if(count < 0){
         countElement.style.color = 'red';
     }
@@ -41,7 +42,12 @@ function decreaseCount() {
     
 }
 
+
+
 function resetCount() {
     count = 0;
+    if(count === 0){
+        countElement.style.color = 'Black';
+    }
     updateCount();
 }
