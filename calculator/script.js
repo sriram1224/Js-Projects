@@ -15,7 +15,7 @@ function increaseCount() {
 
     
     const countElement = document.getElementById('count');
-    countElement.style.color = 'Black'; 
+    countElement.style.color = 'blue'; 
     if(count < 0){
         countElement.style.color = 'red';
     }
