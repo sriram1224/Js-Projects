@@ -16,6 +16,9 @@ function increaseCount() {
     
     const countElement = document.getElementById('count');
     countElement.style.color = 'Black'; 
+    if(count < 1){
+        countElement.style.color = 'red';
+    }
 
     updateCount();
 
@@ -26,6 +29,10 @@ function increaseCount() {
 function decreaseCount() {
     const countElement = document.getElementById('count');
     countElement.style.color = 'red';
+    if(count === 1){
+        countElement.style.color = 'Black';
+    }
+    
         count--;
         updateCount();
     
