@@ -19,7 +19,7 @@ function renderProductList() {
 
         productItem.innerHTML = `
             <p>${product.name}</p>
-            <p>${product.price}</p>
+            <p>${product.price}rs</p>
             <div>
                 <button onclick="addToCart(${product.id})">+</button>
                 <span>${cart[product.id] || 0}</span>
@@ -50,14 +50,14 @@ function renderCart() {
                 <p>${product.name}</p>
                 
                 <span>${cart[productId]}</span>
-                <p>Price: ${cart[productId]*product.price}</p>
+                <p>Price: ${cart[productId]*product.price}rs</p>
             `;
 
             cartElement.appendChild(cartItem);
         });
 
         const totalPrice = document.createElement('p');
-        totalPrice.textContent = `Total Price: ${calculateTotal()}`;
+        totalPrice.textContent = `Total Price: ${calculateTotal()}rs`;
         cartElement.appendChild(totalPrice);
     }
 }
