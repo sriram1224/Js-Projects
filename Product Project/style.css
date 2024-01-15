@@ -1,0 +1,7 @@
+
+
+.product-item{
+display: flex;
+gap: 10px;
+background-color: rgb(216, 189, 189);
+}
