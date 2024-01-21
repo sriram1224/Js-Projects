@@ -18,13 +18,20 @@ document.addEventListener("DOMContentLoaded", function () {
                             break;
                     }
                 } else {
-                    scorePlayer.textContent = parseInt(scorePlayer.textContent) + parseInt(action);
+                    
+                    if (button.classList.contains("addScore")) {
+                        scorePlayer.textContent = parseInt(scorePlayer.textContent) + 5;
+                    } else {
+                        // Default to incrementing by 5
+                        scorePlayer.textContent = parseInt(scorePlayer.textContent) + parseInt(action);
+                    }
+    
                     sorting();
                 }
             }
         });
     }
-    activateEventListener();
+    
 document.querySelector("form").addEventListener("submit", (e) => {
     e.preventDefault();
     const firstname = document.getElementById("first-name").value;
