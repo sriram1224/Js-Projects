@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-
+    activateEventListener()
 
     function activateEventListener() {
         document.querySelector(".wrapper").addEventListener("click", (e) => {
@@ -63,7 +63,7 @@ document.querySelector("form").addEventListener("submit", (e) => {
     `
     scoreboardContainer.appendChild(scoreboardElement);
     sorting();
-    activateEventListener();
+   
 
 
 }); 
