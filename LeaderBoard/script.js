@@ -32,42 +32,53 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
     
-document.querySelector("form").addEventListener("submit", (e) => {
-    e.preventDefault();
-    const firstname = document.getElementById("first-name").value;
-    const lastname = document.getElementById("last-name").value;
-    const country = document.getElementById("country").value;
-    const score = document.getElementById("Play-score").value;
-    const errorPrompter = document.querySelector(".prompt");
-
-    errorPrompter.style.display = "none";
-
-    if (firstname === '' || lastname === '' || country === '' || score === '') {
-        errorPrompter.style.display = "block";
-        return;
-    }
-
-    const scoreboardContainer = document.querySelector(".wrapper");
-    const scoreboardElement = document.createElement('div');
-    scoreboardElement.classList.add("scoreboard");
-    scoreboardElement.innerHTML = `
-        <div>
-            <p class="name">${firstname} ${lastname}</p>
-            <p class="time">${getTimeanddate()}</p>
-        </div>
-        <p class="player-coutry">${country}</p>
-        <p class="player-score">${score}</p>
-        <div class="btn">
-            <button>&#x1F5D1</button>
-            <button class="addScore">+5</button>
-            <button class="subtractScore">-5</button>
-        </div>
-    `;
-    scoreboardContainer.appendChild(scoreboardElement);
-    sorting();
-});
-
-
+    document.querySelector("form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const firstnameInput = document.getElementById("first-name");
+        const lastnameInput = document.getElementById("last-name");
+        const countryInput = document.getElementById("country");
+        const scoreInput = document.getElementById("Play-score");
+        const errorPrompter = document.querySelector(".prompt");
+    
+        errorPrompter.style.display = "none";
+    
+        const firstname = firstnameInput.value;
+        const lastname = lastnameInput.value;
+        const country = countryInput.value;
+        const score = scoreInput.value;
+    
+        if (firstname === '' || lastname === '' || country === '' || score === '') {
+            errorPrompter.style.display = "block";
+            return; // Do not proceed if any field is empty
+        }
+    
+        const scoreboardContainer = document.querySelector(".wrapper");
+        const scoreboardElement = document.createElement('div');
+        scoreboardElement.classList.add("scoreboard");
+        scoreboardElement.innerHTML = `
+            <div>
+                <p class="name">${firstname} ${lastname}</p>
+                <p class="time">${getTimeanddate()}</p>
+            </div>
+            <p class="player-coutry">${country}</p>
+            <p class="player-score">${score}</p>
+            <div class="btn">
+                <button>&#x1F5D1</button>
+                <button class="addScore">+5</button>
+                <button class="subtractScore">-5</button>
+            </div>
+        `;
+        scoreboardContainer.appendChild(scoreboardElement);
+        sorting();
+    
+        // Clear input fields after adding a player
+        firstnameInput.value = '';
+        lastnameInput.value = '';
+        countryInput.value = '';
+        scoreInput.value = '';
+    });
+    
+    
 
 
 function sorting() {
