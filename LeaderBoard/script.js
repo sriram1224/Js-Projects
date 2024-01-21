@@ -44,6 +44,7 @@ document.querySelector("form").addEventListener("submit", (e) => {
 
     if (firstname === '' || lastname === '' || country === '' || score === '') {
         errorPrompter.style.display = "block";
+        return;
     }
     const scoreboardContainer = document.querySelector(".wrapper");
     const scoreboardElement = document.createElement('div');
