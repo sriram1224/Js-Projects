@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 
 body {
-    background:  url('https://images7.alphacoders.com/133/1338126.png') center/cover no-repeat fixed;
+    background:  url('./1338126.png') center/cover no-repeat fixed;
     margin: 0;
     font-family: 'Poppins', sans-serif;
     backdrop-filter: blur(4px);
@@ -55,9 +55,7 @@ h1 {
     line-height: 50px;
     color: #ff0400;
 }
-.fa-shop{
-  
-}
+
 
 .buttons-container {
     display: flex;
