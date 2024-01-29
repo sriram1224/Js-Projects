@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Information Card</title>
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Rubik:wght@300&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="style.css">
+ 
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <div class="header">
+        <h1>User Information Card</h1>
+      </div>
+      <div class="user-information">
+        <div class="user-info">
+          <div class="field">
+            <span class="label">First Name:</span>
+            <div id="first-name"></div>
+          </div>
+          <div class="field">
+            <span class="label">Last Name:</span>
+            <div id="last-name"></div>
+          </div>
+          <div class="field">
+            <span class="label">Country:</span>
+            <div id="country"></div>
+          </div>
+          <div class="field">
+            <span class="label">Phone Number:</span>
+            <div id="phone-number"></div>
+          </div>
+          <div class="field">
+            <span class="label">State:</span>
+            <div id="state"></div>
+          </div>
+          <div class="field">
+            <span class="label">City:</span>
+            <div id="city"></div>
+          </div>
+          <div class="field">
+            <span class="label">Village:</span>
+            <div id="village"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const stored = localStorage.getItem("userInformation");
+    if (stored) {
+        const userInfo = JSON.parse(stored);
+        document.getElementById("first-name").textContent = userInfo.firstName;
+        document.getElementById("last-name").textContent = userInfo.lastName;
+        document.getElementById("country").textContent = userInfo.country;
+        document.getElementById("phone-number").textContent = userInfo.phoneNumber;
+        document.getElementById("state").textContent = userInfo.state;
+        document.getElementById("city").textContent = userInfo.city;
+        document.getElementById("village").textContent = userInfo.village;
+    } else {
+        store();
+    }
+
+    function store() {
+        var firstName = prompt("Enter your first name:");
+        var lastName = prompt("Enter your last name:");
+        var country = prompt("Enter your country:");
+        var phoneNumber = prompt("Enter your phone number:");
+        var state = prompt("Enter your state:");
+        var city = prompt("Enter your city:");
+        var village = prompt("Enter your village:");
+        const userInfo = {
+            firstName,
+            lastName,
+            country,
+            phoneNumber,
+            state,
+            city,
+            village,
+        };
+
+        localStorage.setItem("userInformation", JSON.stringify(userInfo));
+
+        document.getElementById("first-name").textContent = userInfo.firstName;
+        document.getElementById("last-name").textContent = userInfo.lastName;
+        document.getElementById("country").textContent = userInfo.country;
+        document.getElementById("phone-number").textContent = userInfo.phoneNumber;
+        document.getElementById("state").textContent = userInfo.state;
+        document.getElementById("city").textContent = userInfo.city;
+        document.getElementById("village").textContent = userInfo.village;
+    }
+  </script>
+</body>
+</html>
