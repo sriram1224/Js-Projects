@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Visualization Project</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #chart-container {
+      width: 80%;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div id="chart-container">
+  <canvas id="barChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/animejs"></script>
+<script>
+  
+  const data = {
+    labels: ['Category 1', 'Category 2', 'Category 3', 'Category 4'],
+    datasets: [{
+      label: 'Sample Data',
+      data: [30, 45, 25, 60],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.5)',
+        'rgba(54, 162, 235, 0.5)',
+        'rgba(255, 206, 86, 0.5)',
+        'rgba(75, 192, 192, 0.5)',
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+      ],
+      borderWidth: 1,
+    }]
+  };
+
+ 
+  const config = {
+    type: 'bar',
+    data: data,
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        }
+      },
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'top',
+        }
+      }
+    }
+  };
+
+  
+  const ctx = document.getElementById('barChart').getContext('2d');
+  const myChart = new Chart(ctx, config);
+
+  anime({
+    targets: '#barChart',
+    scaleX: 1.2,
+    scaleY: 1.2,
+    easing: 'easeInOutQuad',
+    duration: 1000,
+    direction: 'alternate',
+    loop: true
+  });
+
+  document.getElementById('barChart').addEventListener('mousemove', function (event) {
+    const activePoint = myChart.getElementsAtEventForMode(event, 'nearest', { intersect: true }, true)[0];
+    if (activePoint) {
+      document.getElementById('barChart').style.cursor = 'pointer';
+    } else {
+      document.getElementById('barChart').style.cursor = 'default';
+    }
+  });
+
+  document.getElementById('barChart').addEventListener('click', function (event) {
+    const activePoint = myChart.getElementsAtEvent(event)[0];
+    if (activePoint) {
+      const dataValue = data.datasets[activePoint.datasetIndex].data[activePoint.index];
+      alert(`Clicked on ${data.labels[activePoint.index]}: ${dataValue}`);
+    }
+  });
+</script>
+
+</body>
+</html>
